@@ -20,6 +20,7 @@ var special = ["$", "!", "/", "@", "#", "%", "^", "&", "*"];
 
 var passwordCharacters = [];
 
+
 // for loop for Numbers Array
 
 for (var i = 0; i < 10; i++) {
@@ -62,18 +63,20 @@ for (var i = 0; i < special.length; i++) {
 
 //for loop for password generator
 
+
+var passwordArray = [];
+
 for (var i = 0; i < userPasswordLength; i++) {
   
-  var generatePassword = passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
- 
-  console.log(generatePassword)
+   passwordArray  = passwordArray + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+  
 }
 
 //create value to choose password characters
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword;
+  var password = passwordArray;
   var passwordText = document.querySelector("#password");
 
   
