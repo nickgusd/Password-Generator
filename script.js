@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 
 //Assign prompt and confirm
-var userPasswordLength = prompt("how many characters would you like the password to contain?");
+var userPasswordLength = prompt("How many characters would you like the password to contain?");
 var confirmUpperCase = confirm("Click Ok to confirm including uppercase characters");
 var confirmLowerCase = confirm("Click Ok to confirm including lowercase characters");
 var confirmSpecial = confirm("Click Ok to confirm including special characters");
@@ -17,9 +17,10 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 
 var numbers = [];
 
-var special = ["$", "!", "/", "@", "#", "%", "^", "&", "*"];
+var special = ["$", "!", "/", "@", "#", "%", "^", "&", "*", "(", ")", "+", "-","=", ">", "<", "?"];
 
 var passwordCharacters = [];
+
 
 
 // for loop for Numbers Array
@@ -29,7 +30,7 @@ for (var i = 0; i < 10; i++) {
 }
 
 
-// if else statement for password length
+// if else statement for password length criteria
 if (userPasswordLength < 9) {
   alert("Password length must be at least 9 characters")
   
@@ -64,16 +65,13 @@ for (var i = 0; i < lowerCase.length; i++) {
   passwordCharacters.push(lowerCase[i]);
 }
 }
-//for loop for pushing special into newArray
+//for loop for pushing special characters into newArray
 if (confirmSpecial) {
 
 for (var i = 0; i < special.length; i++) {
   passwordCharacters.push(special[i]);
 }
 }
-
-// pushing arrays into new array, we need to edit this so it is not array within arrays
-//newArray.push(upperCase, lowerCase, numbers, special);
 
 //for loop for password generator
 
@@ -86,7 +84,6 @@ for (var i = 0; i < userPasswordLength; i++) {
   
 }
 
-//create value to choose password characters
 
 // Write password to the #password input
 function writePassword() {
