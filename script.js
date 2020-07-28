@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
 //Assign prompt and confirm
 var userPasswordLength = prompt("how many characters would you like the password to contain?");
 var confirmUpperCase = confirm("Click Ok to confirm including uppercase characters");
@@ -26,6 +27,19 @@ var passwordCharacters = [];
 for (var i = 0; i < 10; i++) {
   numbers.push(i);
 }
+
+
+// if else statement for password length
+if (userPasswordLength < 9) {
+  alert("Password length must be at least 9 characters")
+  
+} else if (userPasswordLength > 128) {
+  alert("Pasword length must be fewer than 128 characters")
+} else {
+  alert("Password length is acceptable")
+}
+
+
 
 //for loop for pushing numbers array into newArray 
 if (confirmNumbers) {
@@ -82,6 +96,8 @@ function writePassword() {
   
   passwordText.value = password;
 
+  
+console.log(passwordArray)
 
 }
 
@@ -89,41 +105,3 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-/* 4 arrays
-
-var upperCase = [["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-
-var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
-var special = ["$", "!", "/", "@", "#", "%", "^", "&", "*"];
-
-var workshopArr = []; we will push the arrays in here [upperCase, lowercase, numbers, special]; it should display like [Nick21@CHS]
-
-var finalResultArray = [];
-
-var userPasswordLengthChoice = prompt("Ask question in here")
-
-
-
-2. We need to loop through our arrays so we can use them in our logic.
-write a for loop for upperCase, lowercase, numbers, and special.
-
-4 variables to store the prompt + confirm;
-
-3. We need to connect those answers from the user to our array; 
-  if the user click's yes, they want uppercase, we want to push/add our uppercase array to our workshop array;
-
-3a. We need to create a condition to handle the trigger of adding the 4 arrays to our workshopArr. whenever the user clicks something it should be evaluated in our condition that then fires the addition to our workshop array.
-i.e. if the user clicks ok to numbers, we push the numbers array into our workshop array.
-
-4. we now need to manipulate our array based upon the user's initial password length selection.
-** Everytime we have our base logic down we then need to ask ourselves, how do we turn our logic into code. 
-4a. we need to randomize the indexes of the array. Math.floor random maybe?
-4b. loop through the array and cut make sure you have special characters, numbers, upper, and lowercase in your array. check with console.log
-4b. First we need to check and cut down the length of our array = to the user's response in the userPasswordLengthChoice and then we filter the array and push/add that to our finalResultsArr variable and that will contain the final password. 
-
-5. Take that final results array variable and plug that into the html. 
-Once we are able to loop through all 4, we will then add the user's response to the workshop array
-*/
