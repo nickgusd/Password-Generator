@@ -1,6 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+//writepassword function
+function writePassword() {
 
 //Assign prompt and confirm
 var userPasswordLength = prompt("How many characters would you like the password to contain?");
@@ -21,7 +23,7 @@ var special = ["$", "!", "/", "@", "#", "%", "^", "&", "*", "(", ")", "+", "-","
 
 var passwordCharacters = [];
 
-
+var passwordArray = [];
 
 // for loop for Numbers Array
 
@@ -74,27 +76,23 @@ for (var i = 0; i < special.length; i++) {
 }
 
 //for loop for password generator
-
+function generatePassword() {
  
-var passwordArray = [];
+
 
 for (var i = 0; i < userPasswordLength; i++) {
   
    passwordArray  = passwordArray + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
-  
+  console.log(passwordArray)
+}
+  return passwordArray
 }
 
-
 // Write password to the #password input
-function writePassword() {
-  var password = passwordArray;
+
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
-  
   passwordText.value = password;
-
-  
-console.log(passwordArray)
 
 }
 
