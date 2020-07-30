@@ -75,7 +75,7 @@ for (var i = 0; i < special.length; i++) {
 
 //for loop for password generator
 
-
+ 
 var passwordArray = [];
 
 for (var i = 0; i < userPasswordLength; i++) {
